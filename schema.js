@@ -1,5 +1,5 @@
 var Schema = {
-  users: {
+  Discount: {
     product_name: {type: 'string', nullable: false, primary: true},
     price: {type: 'number', maxlength: 50, nullable: true},
     discount: {type: 'number', maxlength: 100, nullable: false},
