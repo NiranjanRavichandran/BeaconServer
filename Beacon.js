@@ -22,19 +22,19 @@ var knex = require('knex')({
 var Bookshelf = require('bookshelf')(knex);
 
 // Discount model
-var User = Bookshelf.Model.extend({
+var Discount = Bookshelf.Model.extend({
     tableName: 'discounts'
 });
 
 //Discounts Collection
-var Users = Bookshelf.Collection.extend({
+var Discounts = Bookshelf.Collection.extend({
   model: Discount
 });
 
 router.route('/discounts/:aisleName')
   // fetch discounts for aisleName
   .get(function (req, res) {
-    Discount.forge({aisleName: req.params.aisleName})
+    Discounts.forge({aisleName: req.params.aisleName})
     .fetch()
     .then(function (discountList) {
       if (!discountList) {
